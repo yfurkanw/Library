@@ -41,11 +41,11 @@ def librarianMain():
                 print(getMemberFromLastName(text))
 
         elif(secim == 3):
-            print("\n1-Kitap Ekleme\n2-Tüm Kitap Listesini Getir\n3-Kitap Arama(ID)"
-                  "\n4-Kitap Arama(Name)\n5-Kitap Arama(Author)\n6-Kitap Arama(Category ID)"
-                  "\n7-Kitap Adı Güncelleme(ID)\n8-Kitap Yazarı Güncelleme(ID)\n9-Kitap Silme(ID)")
+            print("\n1-Add Book\n2-Get All Book List\n3-Search Book(ID)"
+                  "\n4-Search Book(Name)\n5-Search Book(Author)\n6-Search Book(Category ID)"
+                  "\n7-Update Book Name(ID)\n8-Update Book Author(ID)\n9-Delete Book(ID)")
 
-            kitap_secim = int(input("Seçimini Giriniz:"))
+            kitap_secim = int(input("Enter Your Selection:"))
             if(kitap_secim == 1):
                 addBook()
             elif(kitap_secim == 2):
