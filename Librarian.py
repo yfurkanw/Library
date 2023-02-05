@@ -8,8 +8,8 @@ def librarianMain():
     print("Welcome to Librarian Screen\n")
     while(True):
         print("1-Member Process\n2-Category Process\n3-Book Category\n4-Take,Reserve,Go Back\n5-Exit")
-        secim = int(input("Enter Your Selection:"))
-        if(secim == 1):
+        selection = int(input("Enter Your Selection:"))
+        if(selection == 1):
             print("\n1-Add Member(Librarian)\n2-Add Member(User)\n3-All Member List\n4-Member Search(ID)\n5-Member Search(Last Name)")
             member_selection = int(input("Enter Your Selection:"))
             if(member_selection == 1):
@@ -26,7 +26,7 @@ def librarianMain():
                 print(getMemberFromLastName(text))
             else:
                 print("Wrong Entry")
-        elif(secim == 2):
+        elif(selection == 2):
             print("\n1-Add Category\n2-All Category List\n3-Category Search(ID)\n4-Category Search(Name)")
             category_selection = int(input("Enter Your Selection:"))
             if(category_selection == 1):
@@ -40,50 +40,50 @@ def librarianMain():
                 text = input("Kategori Adını Giriniz:")
                 print(getMemberFromLastName(text))
 
-        elif(secim == 3):
+        elif(selection == 3):
             print("\n1-Add Book\n2-Get All Book List\n3-Search Book(ID)"
                   "\n4-Search Book(Name)\n5-Search Book(Author)\n6-Search Book(Category ID)"
                   "\n7-Update Book Name(ID)\n8-Update Book Author(ID)\n9-Delete Book(ID)")
 
-            kitap_secim = int(input("Enter Your Selection:"))
-            if(kitap_secim == 1):
+            book_selection = int(input("Enter Your Selection:"))
+            if(book_selection == 1):
                 addBook()
-            elif(kitap_secim == 2):
+            elif(book_selection == 2):
                 print(getBooksAll())
-            elif(kitap_secim == 3):
-                id = int(input("Kitap  ID'si giriniz:"))
+            elif(book_selection == 3):
+                id = int(input("Enter Book ID:"))
                 print(getBooksFromBookID(id))
-            elif(kitap_secim == 4):
-                name = input("Kitap  Adını giriniz:")
+            elif(book_selection == 4):
+                name = input("Enter Book Name:")
                 print(getBooksFromName(name))
-            elif(kitap_secim == 5):
-                name = input("Kitap  Authhor giriniz:")
+            elif(book_selection == 5):
+                name = input("Enter Book Author:")
                 print(getBooksFromAuthor(name))
-            elif(kitap_secim == 6):
-                id = int(input("Kitap  Category ID'si giriniz:"))
+            elif(book_selection == 6):
+                id = int(input("Enter Book Category ID:"))
                 print(getBooksFromCategoryID(id))
-            elif(kitap_secim == 7):
-                id = int(input("Kitap  ID'si giriniz:"))
+            elif(book_selection == 7):
+                id = int(input("Enter Book ID"))
                 updateBookNameFromID(id)
-            elif(kitap_secim == 8):
-                id = int(input("Kitap  ID'si giriniz:"))
+            elif(book_selection == 8):
+                id = int(input("Enter Book ID:"))
                 updateBookAuthorFromID(id)
-            elif(kitap_secim == 9):
-                id = int(input("Kitap  ID'si giriniz:"))
+            elif(book_selection == 9):
+                id = int(input("Enter Book ID:"))
                 deleteBookFromID(id)
             else:
-                print("Hatalı İşlem")
-        elif(secim == 4):
-            print("\n1-Kitap Kirala\n2-Kitap Rezerve Et\n3-Kitap Geri Al")
-            kitap_islemler=int(input("Seçiminizi Giriniz:"))
-            if(kitap_islemler == 1):
+                print("Wrong Process")
+        elif(selection == 4):
+            print("\n1-Take Book\n2-Reserve Book\n3-Book Take Again:")
+            book_process=int(input("Enter Your Selection:"))
+            if(book_process == 1):
                 addTook()
-            elif(kitap_islemler == 2):
+            elif(book_process == 2):
                 addReceived()
-            elif(kitap_islemler == 3):
+            elif(book_process == 3):
                 addReturned()
 
-        elif(secim == 5):
+        elif(selection == 5):
             break
 
 

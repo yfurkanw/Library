@@ -6,7 +6,7 @@ def addCategory():
     name = input("Category Name:")
     cur.execute("Insert into Categories(Name) values(?)",[name])
     db.commit()
-    print("Kategori Eklendi")
+    print("Category Added..")
 
 def getCategoriesAll():
     cur.execute("Select * from Categories")
@@ -24,16 +24,16 @@ def getCategoriesFromID(id):
     return data
 
 def deleteCategoryFromID(id):
-    print("Silinecek Kategori:",end=" ")
+    print("Category to be deleted:",end=" ")
     print(getCategoriesFromID(id))
     cur.execute("Delete from Categories where CategoryID = ?",(id,))
     db.commit()
-    print("Silindi")
+    print("DEleted")
 
 def updateCategoryFromID(id):
-    print("Güncellenecek Kategori:", end=" ")
+    print("Category to be updated:", end=" ")
     print(getCategoriesFromID(id))
     name = input("Update Category Name:")
     cur.execute("Update Categories set Name='{}' where CategoryID = {}".format(name, id))
     db.commit()
-    print("Güncellendi")
+    print("Updated")

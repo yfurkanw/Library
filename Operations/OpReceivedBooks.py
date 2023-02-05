@@ -13,8 +13,8 @@ def addReceived():
 
         cur.execute("Insert into ReceivedBooks(MemberID,BookID,TookDate) values(?,?,?)",datas)
         db.commit()
-        print("Kitap Rezerve Edildi.")
+        print("Book reserved.")
     else:
-        print("Kitap Müsait Değil.")
+        print("Book is not avaliable.")
 
 

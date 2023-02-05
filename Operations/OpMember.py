@@ -21,7 +21,7 @@ def MemberSignUp():
     dataAddUserTest = [firstNameTest, LastNameTest, TypeTest, MailTest, md5Hash(Password),0]
     cur.execute(""" Insert into Members(FirstName,LastName,Type,Mail,Password,TookedBooks) values(?,?,?,?,?,?)""", dataAddUserTest)
     db.commit()
-    print("Başarıyla Kaydedildi...")
+    print("Successfully saved...")
 
 def MemberSignUpLibrarian():
     firstNameTest = input("Input First Name:")
@@ -32,7 +32,7 @@ def MemberSignUpLibrarian():
     dataAddUserTest = [firstNameTest, LastNameTest, TypeTest, MailTest, md5Hash(Password),0]
     cur.execute(""" Insert into Members(FirstName,LastName,Type,Mail,Password,TookedBooks) values(?,?,?,?,?,?)""", dataAddUserTest)
     db.commit()
-    print("Başarıyla Kaydedildi...")
+    print("Successfully saved...")
 
 def getMemberAll():
     cur.execute("Select * from Members")

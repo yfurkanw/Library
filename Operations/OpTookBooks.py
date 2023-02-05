@@ -15,11 +15,11 @@ def addTook():#Rezerve Ekleme Fonksiyonu
             cur.execute("Insert into TookBooks(MemberID,BookID,TookDate) values(?,?,?)",datas)
             db.commit()
 
-            print("Kitap Kiralandı")
+            print("Book was took")
         else:
-            print("Kullanıcı Kitap Alma Sınırına Ulaştı")
+            print("Maximum Book Number")
     else:
-        print("Kitap Müsait Değil")
+        print("Book is avaliable")
 
 def getMemberIDfromBookID(id):
     cur.execute("Select MemberID from TookBooks where BookID = {} ".format(id))

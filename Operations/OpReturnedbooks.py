@@ -12,7 +12,7 @@ def addReturned():
         datas = [memberID,bookID,returnedDate]
         cur.execute("Insert into ReturnedBooks(MemberID,BookID,ReturnedDate) values(?,?,?)",datas)
         db.commit()
-        print("Kitap Boşaldı")
+        print("Book unreserved")
     else:
-        print("Kitap Boşta.")
+        print("Book avaliable.")
 

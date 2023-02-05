@@ -17,7 +17,7 @@ def addBook(): #Kitap Eklem fonksiyonumuz.
                 "values(?,?,?,?,?,?,?)",dataAddBook) #Sorgumuzu veritabanına gönderdik.
     db.commit() #Veritabanındaki değişiklikleri kaydettik.
 
-    print("Kitap Eklendi")
+    print("Book Added")
 
 def getBooksAll():#Tüm Kitapları getirme fonksiyonumuz
     cur.execute("Select * from Books") #Tüm kitapları getiricek sorgumuzu veritabanımıza gönderdik.
@@ -54,31 +54,31 @@ def deleteBookFromID(id):#Kitap Silme Fonksiyonumuz
     print(getBooksFromBookID(id))#Belirtilen ID'ye göre işlem yapılacak veriyi getirdik.
     cur.execute("Delete Books where BookID = {}".format(id))#Silme işlemi yapıldı
     db.commit()
-    print("Kitap Silindi")
+    print("Book deleted")
 
 def updateBookNameFromID(id):#Kitap Adı Güncelleme Fonksiyonumuz
-    print("Güncellenecek Kitap:", end=" ")
+    print("Book to be updated:", end=" ")
     print(getBooksFromBookID(id))#Belirtilen ID'ye göre işlem yapılacak veriyi getirdik.
     name = input("Update Book Name:")
     cur.execute("Update Books set Name='{}' where BookID = {}".format(name, id))#Güncelleme işlemi yapıldı
     db.commit()
-    print("Kitap Güncellendi")
+    print("Book updated")
 
 def updateBookAuthorFromID(id):#Kitap Yazarı Güncelleme Fonksiyonumuz
-    print("Güncellenecek Kitap:", end=" ")
+    print("Update Book Name:", end=" ")
     print(getBooksFromBookID(id))#Belirtilen ID'ye göre işlem yapılacak veriyi getirdik.
     author = input("Update Book Author:")
     cur.execute("Update Books set Author='{}' where BookID = {}".format(author, id))#Güncelleme işlemi yapıldı
     db.commit()
-    print("Kitap Güncellendi")
+    print("Book Updated")
 
 def updateBookIsbnFromID(id):#Kitap ISBN Numarası Güncelleme Fonksiyonumuz
-    print("Güncellenecek Kitap:", end=" ")
+    print("Update Book Name:", end=" ")
     print(getBooksFromBookID(id))#Belirtilen ID'ye göre işlem yapılacak veriyi getirdik.
     isbn = int(input("Update Book ISBN:"))
     cur.execute("Update Books set ISBN={} where BookID = {}".format(isbn, id))#Güncelleme işlemi yapıldı
     db.commit()
-    print("Kitap Güncellendi")
+    print("Book Updated")
 
 def checkBookStatusFromID(id):#Kitap Statusu Kontrol Fonksiyonumuz
     cur.execute("Select Status from Books where BookID = ?  ", (id,))#Belirtilen parametreye göre arama yaptık.
