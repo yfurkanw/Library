@@ -1,10 +1,11 @@
-from Operations.OpMember import  *
 from Operations.OpCategory import *
-from Operations.OpBooks import *
-from Operations.OpTookBooks import *
 from Operations.OpReceivedBooks import *
 from Operations.OpReturnedbooks import *
 
+BookOperations = Book()
+CategoryOperations = Category()
+Member = MemberClass()
+ReceivedOp = Received()
 def memberMain():
     print("Welcome to Member Screen\n")
     while(True):
@@ -15,13 +16,13 @@ def memberMain():
             print("\n1-All Category List\n2-Category Search(ID)\n3-Category Search(Name)")
             category_selection = int(input("Enter Your Selection:"))
             if(category_selection == 1):
-                print(getCategoriesAll())
+                print(CategoryOperations.getCategoriesAll())
             elif(category_selection == 2):
                 id = int(input("Enter ID of Category you want to search"))
-                print(getCategoriesFromID(id))
+                print(CategoryOperations.getCategoriesFromID(id))
             elif(category_selection == 3):
                 text = input("Enter Name of CAtegory you want to search")
-                print(getMemberFromLastName(text))
+                print(CategoryOperations.getCategoriesFromName(text))
 
         elif(selection == 2):
             print("\n1-Get All Book List\n2-Search Book(ID)"
@@ -29,25 +30,25 @@ def memberMain():
 
             book_selection = int(input("Enter Your Selection:"))
             if(book_selection == 1):
-                print(getBooksAll())
+                print(BookOperations.getBooksAll())
             elif(book_selection == 2):
                 id = int(input("Enter the ID of the book you want to search"))
-                print(getBooksFromBookID(id))
+                print(BookOperations.getBooksFromBookID(id))
             elif(book_selection == 3):
                 name = input("Enter the name of the book you want to search:")
-                print(getBooksFromName(name))
+                print(BookOperations.getBooksFromName(name))
             elif(book_selection == 4):
                 name = input("Enter the author of the book you want to search:")
-                print(getBooksFromAuthor(name))
+                print(BookOperations.getBooksFromAuthor(name))
             elif(book_selection == 5):
                 id = int(input("Enter the ID of the category of the book you want to search:"))
-                print(getBooksFromCategoryID(id))
+                print(BookOperations.getBooksFromCategoryID(id))
             else:
                 print("Wrong Process")
         elif(selection == 3):
             print("\n1-Reserve the Book.")
             bookprocess=int(input("Enter Your Selection:"))
             if(bookprocess == 1):
-                print(addReceived())
+                print(ReceivedOp.addReceived())
         elif(selection == 4):
             break
