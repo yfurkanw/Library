@@ -52,7 +52,7 @@ class Book:
 
     def deleteBookFromID(self,id):#Kitap Silme Fonksiyonumuz
         print("Silinecek Kitap:",end=" ")
-        print(getBooksFromBookID(id))#Belirtilen ID'ye göre işlem yapılacak veriyi getirdik.
+        print(getBooksFromBookID(id)) #Belirtilen ID'ye göre işlem yapılacak veriyi getirdik.
         database.cur.execute("Delete Books where BookID = {}".format(id))#Silme işlemi yapıldı
         database.db.commit()
         print("Book deleted")
@@ -89,3 +89,4 @@ class Book:
             return True
         else:
             return False
+

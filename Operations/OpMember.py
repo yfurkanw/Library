@@ -77,3 +77,4 @@ class MemberClass:
         hasher.update(text.encode('utf-8'))
         hash = hasher.hexdigest()
         return hash
+
